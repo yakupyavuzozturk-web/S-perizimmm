@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sürprizim ✨</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #09091e, #241044, #541b50);
+    overflow-x: hidden;
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.25; }
+    to { opacity: 1; }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 35px 18px;
+}
+
+h1 {
+    font-size: clamp(32px, 8vw, 48px);
+    color: #ffd5ef;
+    text-shadow: 0 0 20px #ff70c8;
+}
+
+p {
+    line-height: 1.7;
+}
+
+input {
+    width: min(100%, 280px);
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ff9cdb;
+    border-radius: 12px;
+    background: #ffffff12;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+input::placeholder {
+    color: #e5c9e3;
+}
+
+button {
+    border: none;
+    padding: 13px 22px;
+    margin: 8px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #ff69b4, #a66cff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 25px 15px;
+    border: 1px solid #ffffff35;
+    border-radius: 20px;
+    background: #ffffff12;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px #d65bff18;
+}
+
+.card .emoji {
+    font-size: 45px;
+}
+
+.content-box {
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff12;
+    border: 1px solid #ffffff30;
+}
+
+#photo {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.letter {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff0f7;
+    color: #57294b;
+    line-height: 1.9;
+    box-shadow: 0 0 30px #ff70c888;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+footer {
+    margin-top: 40px;
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<main>
+
+<section id="login">
+    <h1>✨ Sürprim Var! ✨</h1>
+
+    <p>
+        Senin için küçük ama özel bir şey hazırladım.<br>
+        Hazırsan bu güzel sürprize başlayalım. 💗
+    </p>
+
+    <div class="content-box">
+        <div style="font-size:55px">🎁</div>
+
+        <p>Özel şifreyi gir bakalım...</p>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Şifreyi yaz..."
+        >
+
+        <br>
+
+        <button onclick="checkPassword()">
+            Sürprizi Aç 💖
+        </button>
+
+        <p id="error" style="color:#ffb3d9"></p>
+    </div>
+</section>
+
+
+<section id="welcome" class="hidden">
+
+    <h1>Hoş Geldin! 💖</h1>
+
+    <p>
+        Burası senin için hazırladığım küçük bir dünya.<br>
+        Her kutuda seni bekleyen başka bir sürpriz var. ✨
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <div class="emoji">📸</div>
+            <h3>Anılarımız</h3>
+            <p>Güzel anılara bir göz atalım.</p>
+
+            <button onclick="showSection('photos')">
+                Fotoğraflara Bak
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💌</div>
+            <h3>Sana Bir Not</h3>
+            <p>Söylemek istediğim birkaç şey var.</p>
+
+            <button onclick="showSection('note')">
+                Notu Aç
+            </button>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🎵</div>
+            <h3>Müzik Zamanı</h3>
+            <p>Biraz müzik, biraz mutluluk...</p>
+
+            <button onclick="showSection('music')">
+                Müziği Aç
+            </button>
+        </div>
+
+    </div>
+
+    <div class="content-box" style="margin-top:30px">
+        <h2>Bir de son sürpriz var... 💗</h2>
+        <p>En sona sakladığım şeyi görmek ister misin?</p>
+
+        <button onclick="showSection('letter')">
+            Son Sürprizi Gör 💌
+        </button>
+    </div>
+
+</section>
+
+
+<section id="photos" class="hidden">
+
+    <h1>📸 Güzel Anılar</h1>
+
+    <div class="content-box">
+
+        <p>
+           
