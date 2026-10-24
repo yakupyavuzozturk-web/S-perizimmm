@@ -1,263 +1,271 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sürprizim ✨</title>
+<title>Sürprizim 💖</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;font-family:Arial,sans-serif;
+ color:white;text-align:center;
+ background:linear-gradient(135deg,#100d2e,#45134f,#8b285e);
+ overflow-x:hidden
 }
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-    background: linear-gradient(135deg, #09091e, #241044, #541b50);
-    overflow-x: hidden;
+#stars{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;color:white;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{from{opacity:.25}to{opacity:1}}
+main{position:relative;max-width:850px;margin:auto;padding:30px 16px}
+h1{font-size:clamp(30px,7vw,48px);color:#ffd4ec;text-shadow:0 0 20px #ff63bd}
+p{line-height:1.8}
+.box,.card{
+ background:#ffffff12;border:1px solid #ffffff35;
+ border-radius:22px;padding:22px;margin:18px 0;
+ backdrop-filter:blur(8px)
 }
-
-#stars {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
+input{
+ max-width:100%;padding:13px;border-radius:12px;
+ border:1px solid #ff9cdb;background:#ffffff12;color:white;
+ margin:10px
 }
-
-.star {
-    position: absolute;
-    color: white;
-    animation: twinkle 2s infinite alternate;
+input::placeholder{color:#f1cce8}
+button{
+ border:0;border-radius:25px;padding:13px 20px;margin:7px;
+ color:white;font-size:15px;font-weight:bold;
+ background:linear-gradient(90deg,#ff69b4,#a66cff);
+ cursor:pointer
 }
-
-@keyframes twinkle {
-    from { opacity: 0.25; }
-    to { opacity: 1; }
+button:hover{filter:brightness(1.12)}
+.hidden{display:none!important}
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+ gap:14px;margin-top:25px
 }
-
-main {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    padding: 35px 18px;
+.card{margin:0}
+.emoji{font-size:48px}
+.content{margin:20px 0;padding:20px;border-radius:18px;background:#ffffff12}
+#photo{max-width:100%;max-height:350px;border-radius:15px;margin-top:15px}
+.letter{
+ background:#fff0f7;color:#65264f;border-radius:15px;
+ padding:25px;line-height:2;margin:20px auto;max-width:600px;
+ animation:appear .8s ease;overflow-wrap:anywhere
 }
-
-h1 {
-    font-size: clamp(32px, 8vw, 48px);
-    color: #ffd5ef;
-    text-shadow: 0 0 20px #ff70c8;
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
 }
-
-p {
-    line-height: 1.7;
-}
-
-input {
-    width: min(100%, 280px);
-    padding: 14px;
-    margin: 10px 0;
-    border: 1px solid #ff9cdb;
-    border-radius: 12px;
-    background: #ffffff12;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-}
-
-input::placeholder {
-    color: #e5c9e3;
-}
-
-button {
-    border: none;
-    padding: 13px 22px;
-    margin: 8px;
-    border-radius: 25px;
-    background: linear-gradient(90deg, #ff69b4, #a66cff);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.hidden {
-    display: none !important;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.card {
-    padding: 25px 15px;
-    border: 1px solid #ffffff35;
-    border-radius: 20px;
-    background: #ffffff12;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 20px #d65bff18;
-}
-
-.card .emoji {
-    font-size: 45px;
-}
-
-.content-box {
-    margin: 25px auto;
-    padding: 20px;
-    border-radius: 20px;
-    background: #ffffff12;
-    border: 1px solid #ffffff30;
-}
-
-#photo {
-    max-width: 100%;
-    max-height: 350px;
-    border-radius: 15px;
-    margin-top: 15px;
-}
-
-.letter {
-    max-width: 500px;
-    margin: 25px auto;
-    padding: 25px;
-    border-radius: 12px;
-    background: #fff0f7;
-    color: #57294b;
-    line-height: 1.9;
-    box-shadow: 0 0 30px #ff70c888;
-    animation: appear 1s ease;
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-footer {
-    margin-top: 40px;
-    opacity: 0.7;
-    font-size: 13px;
-}
-
+#musicPlayer{width:100%;max-width:450px;margin-top:15px}
+footer{opacity:.7;margin-top:35px;font-size:13px}
 </style>
 </head>
 
 <body>
-
 <div id="stars"></div>
-
 <main>
 
 <section id="login">
-    <h1>✨ Sürprim Var! ✨</h1>
-
-    <p>
-        Senin için küçük ama özel bir şey hazırladım.<br>
-        Hazırsan bu güzel sürprize başlayalım. 💗
-    </p>
-
-    <div class="content-box">
-        <div style="font-size:55px">🎁</div>
-
-        <p>Özel şifreyi gir bakalım...</p>
-
-        <input
-            id="password"
-            type="password"
-            placeholder="Şifreyi yaz..."
-        >
-
-        <br>
-
-        <button onclick="checkPassword()">
-            Sürprizi Aç 💖
-        </button>
-
-        <p id="error" style="color:#ffb3d9"></p>
-    </div>
+ <h1>✨ Sürprizim Var! ✨</h1>
+ <p>Senin için özel bir dünya hazırladım.<br>
+ Hazırsan sürprizimizi açalım! 💗</p>
+ <div class="box">
+  <div class="emoji">🎁</div>
+  <h2>Özel Şifre</h2>
+  <p>Şifreyi gir ve sürprizini keşfet.</p>
+  <form id="loginForm">
+   <input id="password" type="password" placeholder="Şifreyi yaz..." required>
+   <br>
+   <button type="submit">Sürprizi Aç 💖</button>
+  </form>
+  <p id="error" style="color:#ffb6d8"></p>
+ </div>
 </section>
-
 
 <section id="welcome" class="hidden">
+ <h1>Hoş Geldin! 💖</h1>
+ <p>Her kutuda seni bekleyen başka bir sürpriz var.<br>
+ Hazırsan keşfetmeye başlayalım! ✨</p>
 
-    <h1>Hoş Geldin! 💖</h1>
+ <div class="cards">
+  <div class="card">
+   <div class="emoji">📸</div>
+   <h3>Anılarımız</h3>
+   <p>Güzel fotoğraflarını buraya ekle.</p>
+   <button onclick="showSection('photos')">Fotoğrafları Aç</button>
+  </div>
 
-    <p>
-        Burası senin için hazırladığım küçük bir dünya.<br>
-        Her kutuda seni bekleyen başka bir sürpriz var. ✨
-    </p>
+  <div class="card">
+   <div class="emoji">💌</div>
+   <h3>Sana Bir Not</h3>
+   <p>Sana özel bir mesaj var.</p>
+   <button onclick="showSection('note')">Notu Oku</button>
+  </div>
 
-    <div class="card-container">
+  <div class="card">
+   <div class="emoji">🎵</div>
+   <h3>Müzik Zamanı</h3>
+   <p>Sevdiğin bir şarkıyı dinle.</p>
+   <button onclick="showSection('music')">Müziği Aç</button>
+  </div>
+ </div>
 
-        <div class="card">
-            <div class="emoji">📸</div>
-            <h3>Anılarımız</h3>
-            <p>Güzel anılara bir göz atalım.</p>
-
-            <button onclick="showSection('photos')">
-                Fotoğraflara Bak
-            </button>
-        </div>
-
-        <div class="card">
-            <div class="emoji">💌</div>
-            <h3>Sana Bir Not</h3>
-            <p>Söylemek istediğim birkaç şey var.</p>
-
-            <button onclick="showSection('note')">
-                Notu Aç
-            </button>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🎵</div>
-            <h3>Müzik Zamanı</h3>
-            <p>Biraz müzik, biraz mutluluk...</p>
-
-            <button onclick="showSection('music')">
-                Müziği Aç
-            </button>
-        </div>
-
-    </div>
-
-    <div class="content-box" style="margin-top:30px">
-        <h2>Bir de son sürpriz var... 💗</h2>
-        <p>En sona sakladığım şeyi görmek ister misin?</p>
-
-        <button onclick="showSection('letter')">
-            Son Sürprizi Gör 💌
-        </button>
-    </div>
-
+ <div class="box">
+  <div class="emoji">💝</div>
+  <h2>Son Bir Sürpriz!</h2>
+  <p>Senin için sakladığım mektubu aç.</p>
+  <button onclick="showSection('letter')">Mektubu Aç 💌</button>
+ </div>
 </section>
 
-
 <section id="photos" class="hidden">
+ <h1>📸 Anılarımız</h1>
+ <div class="content">
+  <p>Telefonundan bir fotoğraf seçebilirsin.</p>
+  <input type="file" id="photoInput" accept="image/*">
+  <br>
+  <img id="photo" class="hidden" alt="Seçtiğin fotoğraf">
+  <p id="photoMessage">Fotoğrafın burada görünecek. 💗</p>
+  <button onclick="showSection('welcome')">⬅ Geri Dön</button>
+ </div>
+</section>
 
-    <h1>📸 Güzel Anılar</h1>
+<section id="note" class="hidden">
+ <h1>💌 Küçük Bir Not</h1>
+ <div class="letter">
+  Bazen küçük bir mesaj bile insanın gününü güzelleştirebilir. 💗
+  <br><br>
+  Umarım bu küçük sürpriz yüzünde güzel bir gülümseme oluşturur.
+  Kendine iyi bak ve güzel anların kıymetini bil. ✨
+  <br><br>
+  Sevgiyle hazırlanmış küçük bir sürpriz... 🌷
+ </div>
+ <button onclick="showSection('welcome')">⬅ Geri Dön</button>
+</section>
 
-    <div class="content-box">
+<section id="music" class="hidden">
+ <h1>🎵 Müzik Zamanı</h1>
+ <div class="content">
+  <div class="emoji">🎧</div>
+  <p>Telefonundan bir müzik dosyası seç.</p>
+  <input type="file" id="musicInput" accept="audio/*">
+  <br>
+  <audio id="musicPlayer" class="hidden" controls></audio>
+  <p id="musicMessage">Bir şarkı seçince burada çalabilirsin.</p>
+  <button onclick="showSection('welcome')">⬅ Geri Dön</button>
+ </div>
+</section>
 
-        <p>
-           
+<section id="letter" class="hidden">
+ <h1>💌 Sana Özel</h1>
+ <div class="content">
+  <div class="emoji">💖</div>
+  <p>Senin için hazırladığım mektup şimdi açılıyor...</p>
+  <button onclick="document.getElementById('finalLetter').classList.toggle('hidden')">
+   Mektubu Oku ✨
+  </button>
+  <div id="finalLetter" class="letter hidden">
+   Merhaba! 🌸
+   <br><br>
+   Bu küçük sürprizi keşfetmek için zaman ayırdığın için teşekkürler.
+   Umarım hayatında her zaman güzel anılar, mutluluk ve umut olur.
+   <br><br>
+   Unutma, küçücük şeyler bile kocaman mutluluklar getirebilir. 💗
+   <br><br>
+   Sana kocaman mutluluklar diliyorum! ✨❤️
+  </div>
+  <button onclick="showSection('welcome')">⬅ Ana Sayfaya Dön</button>
+ </div>
+</section>
+
+<footer>Senin için sevgiyle hazırlandı 💖</footer>
+</main>
+
+<script>
+const PASSWORD = "2026";
+
+const sections = [
+ "login", "welcome", "photos", "note", "music", "letter"
+];
+
+function showSection(id) {
+ sections.forEach(function(section) {
+  document.getElementById(section).classList.add("hidden");
+ });
+ document.getElementById(id).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.getElementById("loginForm").addEventListener("submit",function(event){
+ event.preventDefault();
+
+ const entered = document.getElementById("password").value;
+ const error = document.getElementById("error");
+
+ if(entered === PASSWORD){
+  error.textContent = "";
+  document.getElementById("password").value = "";
+  showSection("welcome");
+ }else{
+  error.textContent = "Şifre yanlış! Tekrar dene. 💗";
+ }
+});
+
+document.getElementById("photoInput").addEventListener("change",function(){
+ const file = this.files[0];
+ if(!file) return;
+
+ if(!file.type.startsWith("image/")){
+  document.getElementById("photoMessage").textContent =
+   "Lütfen bir fotoğraf dosyası seç.";
+  return;
+ }
+
+ const reader = new FileReader();
+ reader.onload = function(event){
+  const photo = document.getElementById("photo");
+  photo.src = event.target.result;
+  photo.classList.remove("hidden");
+  document.getElementById("photoMessage").textContent =
+   "Fotoğrafın hazır! 📸💗";
+ };
+ reader.readAsDataURL(file);
+});
+
+let currentMusicURL = null;
+
+document.getElementById("musicInput").addEventListener("change",function(){
+ const file = this.files[0];
+ if(!file) return;
+
+ if(!file.type.startsWith("audio/")){
+  document.getElementById("musicMessage").textContent =
+   "Lütfen bir ses dosyası seç.";
+  return;
+ }
+
+ if(currentMusicURL) URL.revokeObjectURL(currentMusicURL);
+ currentMusicURL = URL.createObjectURL(file);
+
+ const player = document.getElementById("musicPlayer");
+ player.src = currentMusicURL;
+ player.classList.remove("hidden");
+ document.getElementById("musicMessage").textContent =
+  "Şarkın hazır! Dinlemek için oynat tuşuna bas. 🎵";
+});
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<65;i++){
+ const star = document.createElement("span");
+ star.className = "star";
+ star.textContent = Math.random() > .5 ? "✦" : "·";
+ star.style.left = Math.random()*100 + "%";
+ star.style.top = Math.random()*100 + "%";
+ star.style.fontSize = (8+Math.random()*16) + "px";
+ star.style.animationDelay = Math.random()*3 + "s";
+ stars.appendChild(star);
+}
+</script>
+</body>
+</html>
