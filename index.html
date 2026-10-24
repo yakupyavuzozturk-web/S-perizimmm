@@ -121,8 +121,8 @@ footer{opacity:.7;margin-top:35px;font-size:13px}
 <section id="photos" class="hidden">
  <h1>📸 Anılarımız</h1>
  <div class="content">
-  <p>Telefonundan bir fotoğraf seçebilirsin.</p>
-  <input type="file" id="photoInput" accept="image/*">
+  <p>Bizim fotoğrafımız 📸💗</p>
+<img src="1776715663484.png" alt="Anımız" style="max-width:100%; border-radius:15px;">
   <br>
   <img id="photo" class="hidden" alt="Seçtiğin fotoğraf">
   <p id="photoMessage">Fotoğrafın burada görünecek. 💗</p>
@@ -148,8 +148,10 @@ footer{opacity:.7;margin-top:35px;font-size:13px}
  <div class="content">
   <div class="emoji">🎧</div>
   <p>Telefonundan bir müzik dosyası seç.</p>
-  <input type="file" id="musicInput" accept="audio/*">
-  <br>
+  <audio controls style="width:100%;">
+ <source src="Yeniden(MP3_160K).mp3" type="audio/mpeg">
+ Tarayıcın müziği desteklemiyor.
+  </audio>
   <audio id="musicPlayer" class="hidden" controls></audio>
   <p id="musicMessage">Bir şarkı seçince burada çalabilirsin.</p>
   <button onclick="showSection('welcome')">⬅ Geri Dön</button>
@@ -182,7 +184,7 @@ footer{opacity:.7;margin-top:35px;font-size:13px}
 </main>
 
 <script>
-const PASSWORD = "2026";
+const PASSWORD = "medosumm5858";
 
 const sections = [
  "login", "welcome", "photos", "note", "music", "letter"
